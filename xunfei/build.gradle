@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.1"
+version = "1.0.2"
 
 android {
     compileSdkVersion 23
@@ -18,8 +18,8 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-def siteUrl = 'https://github.com/AlanCheen/CrashCatcher'   // 项目的主页
-def gitUrl = 'git@github.com:AlanCheen/CrashCatcher.git'   // Git仓库的url
+def siteUrl = 'https://github.com/cr1944/kedaxunfei'   // 项目的主页
+def gitUrl = 'git@github.com:cr1944/kedaxunfei.git'   // Git仓库的url
 group = "ryancheng.xunfei"            // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
@@ -60,6 +60,7 @@ task sourcesJar(type: Jar) {
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding = "UTF-8"
 }
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
